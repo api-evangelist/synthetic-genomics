@@ -1,0 +1,21 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://viridos.com/ (403 on every path, 2026-08-29) and https://github.com/syntheticgenomics
+  (HTTP 200) - the only public developer surface the company ever had.
+limit_count: 0
+note: >-
+  No rate limits are documented because there is no API. Viridos published no developer portal, no
+  API reference, and no machine-readable contract; contract discovery against viridos.com and
+  dspace.bio returned 403 on every path, and the GitHub organization holds only two first-party
+  open-source projects and seven forks, none of which is a service. There are no response headers
+  to record.
+rate_limits: []
+headers: []
+evidence:
+- url: https://viridos.com/openapi.json
+  status: 403
+- url: https://dspace.bio/api
+  status: 403
+- url: https://github.com/syntheticgenomics
+  status: 200

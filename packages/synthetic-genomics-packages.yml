@@ -1,0 +1,75 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://github.com/syntheticgenomics (GitHub org "Viridos Inc.", HTTP 200) plus registry lookups
+  against registry.npmjs.org and pypi.org, 2026-08-29
+note: >-
+  These are first-party open-source projects Viridos published, NOT client SDKs - the company never
+  shipped a public API, so nothing here wraps one. No `SDKs` pointer is emitted for that reason.
+  Neither package is distributed through a registry: both are source-only GitHub repositories
+  installed from a clone, so there is no registry metadata endpoint to read a release date from and
+  `published:` records the last commit that shipped the code instead. The org's other seven public
+  repositories are forks of third-party projects (oauthlib, requests-oauthlib, oauth2client,
+  uwsgitop, whisper-backup, docker-collectd-plugin, docker-python-app) and are excluded - a fork is
+  not a package this company publishes.
+registries_checked:
+- registry: pypi
+  query: sgidspace
+  status: 404
+- registry: npm
+  query: snap-probe-calibrate
+  status: 404
+packages:
+- name: sgidspace
+  title: Synthetic Genomics D-SPACE Public Library
+  official: true
+  language: Python
+  registry: github
+  registry_note: >-
+    Not published to PyPI - pypi.org/pypi/sgidspace/json returns 404. The README's only install
+    path is `git clone` followed by `pip install -e .`, so a consumer must build from source.
+  url: https://github.com/syntheticgenomics/sgidspace
+  install: pip install -e .
+  license: AGPL-3.0
+  version: 1.0.0
+  version_source: sgidspace/version.py on the default branch
+  published: '2018-06-27'
+  published_source: last commit on the default branch (2018-06-27T16:14:49Z)
+  description: >-
+    Deep-learning library for protein function annotation and embedding search, trained on UniProt
+    Sprot/TrEMBL and UniRef100. The README points at a public demo of the D-SPACE annotation and
+    search capability at https://dspace.bio/.
+  demo: https://dspace.bio/
+  demo_status: 403
+  demo_note: >-
+    The demo host still resolves to AWS CloudFront but returns 403 on every path - the public
+    D-SPACE surface referenced by the library's own README is gone.
+  stars: 21
+  currency: >-
+    Last shipped 2018-06-27, more than eight years stale, and the company that published it wound
+    down in 2025. Treat as abandoned.
+- name: snap-probe-calibrate
+  title: SNAP probe calibration app
+  official: true
+  language: TypeScript
+  registry: github
+  registry_note: >-
+    Not published to npm - registry.npmjs.org/snap-probe-calibrate returns 404. Source-only.
+  url: https://github.com/syntheticgenomics/snap-probe-calibrate
+  install: null
+  install_note: no install instructions are published; the repository carries no release or tag
+  license: null
+  license_note: no LICENSE file is present in the repository
+  version: null
+  version_note: >-
+    Checked and there is nothing to record - the repository publishes no tag, release, or version
+    file, and it is absent from npm, so a consumer has no version identifier at all.
+  published: '2025-03-19'
+  published_source: last push to the default branch (2025-03-19T16:07:03Z)
+  description: >-
+    Stand-alone app for calibrating the modbus L-com SRWQ100-pH104 sensor. Operational tooling for
+    the company's own algae cultivation instrumentation, not a developer-facing library.
+  stars: 0
+package_count: 2
+sdk_count: 0
+sdk_note: zero API client libraries - there is no Viridos API for one to wrap

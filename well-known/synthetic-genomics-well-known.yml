@@ -1,0 +1,76 @@
+generated: '2026-08-29'
+method: probed
+source: direct HTTPS probes of every /.well-known/ path on the company's own hosts, 2026-08-29
+note: >-
+  Nothing is served. Every probe against viridos.com returns the same 21-byte
+  "403 | Access blocked" page that the domain root returns, from a SiteGround default vhost
+  (x-default-vhost: 1) behind a certificate that does not cover the domain - the host is not
+  serving a Viridos site at all, so these are not per-path 403s on a live site. dspace.bio, the
+  public D-SPACE demo host named in the company's own sgidspace README, behaves the same way
+  from CloudFront. No WellKnown or SecurityTxt pointer is emitted, because nothing here is a
+  served document; this file is the record of an absence, not of a surface.
+hosts:
+- host: viridos.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+  - path: /.well-known/agent.json
+    status: 403
+    file: null
+  - path: /llms.txt
+    status: 403
+    file: null
+  - path: /openapi.json
+    status: 403
+    file: null
+  - path: /swagger.json
+    status: 403
+    file: null
+  - path: /robots.txt
+    status: 403
+    file: null
+  - path: /sitemap.xml
+    status: 403
+    file: null
+  - path: /api-docs
+    status: 403
+    file: null
+  - path: /v1/openapi.json
+    status: 403
+    file: null
+- host: dspace.bio
+  documents:
+  - path: /
+    status: 403
+    file: null
+  - path: /openapi.json
+    status: 403
+    file: null
+  - path: /llms.txt
+    status: 403
+    file: null
+  - path: /api
+    status: 403
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+  - path: /.well-known/agent.json
+    status: 403
+    file: null

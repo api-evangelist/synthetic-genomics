@@ -1,0 +1,18 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://viridos.com/ (403 on every path, 2026-08-29) and the company's public record - Viridos
+  filed Chapter 11 on 2025-04-14 in the District of Delaware (https://cases.stretto.com/viridos/,
+  HTTP 200) and the case was dismissed 2025-11-26 after substantially all assets were sold.
+plan_count: 0
+note: >-
+  There are no plans to record and there never were any public ones. Viridos was an R&D company
+  building algae strains for biofuel under a research partnership with ExxonMobil - it sold no
+  self-serve product, published no pricing page, and shipped no API to attach a plan to. The
+  company's own website no longer serves any content, so nothing further can be read from it.
+plans: []
+evidence:
+- url: https://viridos.com/
+  status: 403
+- url: https://cases.stretto.com/viridos/
+  status: 200
